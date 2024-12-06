@@ -1,9 +1,33 @@
 
 import GraphViewNoSSR from "@/components/GraphViewNoSSR";
 import Welcome from "@/markdown/welcome.mdx";
-import { ChevronRight, FileSearch, MessageSquareCode, Network } from "lucide-react";
+import { CheckCheck, ChevronDown, ChevronRight, FileSearch, MessageSquareCode, Network } from "lucide-react";
 
 
+
+
+
+
+const BlockFooter = () => {
+  return (
+    <div className="mt-2 mb-8">
+    <div className="flex gap-4 mt-2 mb-3">
+      <div className="my-auto"> <CheckCheck className="text-gray-300" size={14}/> </div>
+      <div className="my-auto"> <span className="text-sm text-gray-300">Modified at 17:20, 17 Oct 2024</span> </div>
+    </div>
+    <hr />
+  </div>
+  );
+};
+
+const Block = () => {
+  return (
+    <div>
+      <Welcome />
+      <BlockFooter />
+    </div>
+  );
+};
 
 export default function Cn() {
   return (
@@ -37,6 +61,7 @@ export default function Cn() {
               <h2 className="text-lg">Feature number 1</h2>
             </div>
 
+
             <div className="flex gap-2">
               <ChevronRight className="text-gray-700" />
               <h2 className="text-lg">Feature number 2</h2>
@@ -47,30 +72,36 @@ export default function Cn() {
               <h2 className="text-lg">Feature number 3</h2>
             </div>      
 
-            <div className="flex gap-2">
-              <ChevronRight className="text-gray-700" />
-              <h2 className="text-lg">Feature number 4</h2>
-            </div>                              
+            <div className="flex flex-col gap-2">
+              <div className="flex gap-2">
+                <ChevronDown className="text-gray-700" />
+                <h2 className="text-lg">Feature number 4</h2>
+              </div>
+              <div className=" flex flex-col  ml-4  ">
+
+                <div className="border-l-2 pl-4 py-1">
+                  <h3>Article 1ed</h3>
+                </div>
+
+                <div className="border-l-2 pl-4 py-1 border-s-pink-400">
+                  <h3 className="text-pink-400">Article 2ed</h3>
+                </div>
+
+                <div className="border-l-2 pl-4 py-1">
+                  <h3>Article 3ed</h3>
+                </div>                                
+              </div>
+            </div>  
+
+
           </nav>
 
           <main className="bg-foreground border-l-2 w-6/12 px-6 py-5 md">
-            <Welcome />
-            <div className="my-8">
-              <hr />
-            </div>
-            <Welcome />
-            <div className="my-8">
-              <hr />
-            </div>
-            <Welcome />         
-            <div className="my-8">
-              <hr />
-            </div>
-            <Welcome />  
-            <div className="my-8">
-              <hr />
-            </div>
-            <Welcome />                             
+            <Block />
+            <Block />
+            <Block />         
+            <Block />  
+            <Block />                             
           </main>
 
           <section className="w-6/12">
